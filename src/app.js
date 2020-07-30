@@ -10,6 +10,7 @@ const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = express();
+const port = port.env.PORT || 3000
 
 app.use(express.static(publicPathDirectory));
 
@@ -75,6 +76,6 @@ app.get('*', (req, res) => {
     res.render('404', { message: 'Page not found..' });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Listenning..');
 });
